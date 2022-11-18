@@ -15,14 +15,16 @@ import java.util.Scanner;
 public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
 
     @Override
-    public int calculateHighestFrequency(String inputText) { // Werkt nog met hoofdlettergevoelig
+    public int calculateHighestFrequency(String inputText) {
         String [] words = inputText.split(" ");
+
         Arrays.sort(words);
+        System.out.println(Arrays.toString(words));
         int max = 0;
         int count = 1;
         String currentWord = words [0];
         for (int i = 1; i < words.length; i++) {
-            if (words[i].equals(currentWord)){
+            if (words[i].equalsIgnoreCase(currentWord)){
                 count++;
             } else {
                 count = 1;
@@ -39,17 +41,16 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
     public int calculateHighestFrequencyForWord(String inputText, String wordToFind) {
         String [] wordList = inputText.split(" ");
         int count = 0;
-        String wordToCount = wordToFind;
         for (int i = 0; i < wordList.length; i++) {
-            if (wordToCount.equalsIgnoreCase(wordList[i]))
+            if (wordToFind.equalsIgnoreCase(wordList[i]))
                 count++;
         }
-        System.out.printf("Amount of '%s': ", wordToCount);
+        System.out.printf("Amount of '%s': ", wordToFind);
         return count;
     }
 
     @Override
-    public List<WordFrequency> calculateMostFrequentNWords(String text, int n) {
+    public List<WordFrequency> calculateMostFrequentNWords(String inputText, int n) {
         return null;
     }
 }

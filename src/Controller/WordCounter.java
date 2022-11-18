@@ -24,8 +24,8 @@ public class WordCounter {
         System.out.println("Calculate the highest frequency of a single word on the following sentence:");
         String inputText = keyboard.nextLine();
         System.out.print("The highest amount of the same word is: ");
-
         System.out.println(wordFrequencyAnalyzerClass.calculateHighestFrequency(inputText));
+
         System.out.println("\nWord to find: ");
         String wordToFind = keyboard.next();
         System.out.println(wordFrequencyAnalyzerClass.calculateHighestFrequencyForWord(inputText, wordToFind));
