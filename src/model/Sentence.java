@@ -11,10 +11,9 @@ import java.util.*;
 public class Sentence implements WordFrequency {
     Scanner keyboard = new Scanner(System.in);
     public String wordToGet;
+    String inputText = keyboard.nextLine();
 
     public String getWord() {
-        System.out.println("Fill in sentence: ");
-        String inputText = keyboard.nextLine();
         String[] words = inputText.split(" ");
         List<String> wordList = new ArrayList<>(List.of(words));
         System.out.println("Word to find: ");
@@ -28,9 +27,7 @@ public class Sentence implements WordFrequency {
     }
 
     public int getFrequency(){
-        System.out.println("Fill in sentence: "); // werkt nog niet goed als het achter elkaar draait
-        String inputText = keyboard.nextLine();
-        String wordList [] = inputText.split(" ");
+        String [] wordList = inputText.split(" ");
         int count = 0;
         System.out.println("Find: ");
         String wordToCount = keyboard.next();

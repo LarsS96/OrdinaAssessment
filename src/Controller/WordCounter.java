@@ -12,40 +12,22 @@ import model.WordFrequencyAnalyzerClass;
  * [omschrijving van code]
  */
 public class WordCounter {
-
+    Scanner keyboard = new Scanner(System.in);
     public static void main(String[] args) {
-        Sentence input = new Sentence();
+        Scanner keyboard = new Scanner(System.in);
+
         System.out.println("\nMade by Lars van der Schoor");
         System.out.println("Welcome to this text processing tool. Within this tool you can look in texts for " +
                 "words and the frequency of words\n");
 
+        WordFrequencyAnalyzerClass wordFrequencyAnalyzerClass = new WordFrequencyAnalyzerClass();
+        System.out.println("Calculate the highest frequency of a single word on the following sentence:");
+        String inputText = keyboard.nextLine();
+        System.out.print("The highest amount of the same word is: ");
 
-
-        // System.out.println(input.getWord());
-        System.out.println(input.getFrequency());
-
-
-
-//        Scanner keyboard = new Scanner(System.in);
-//        System.out.println("Fill in sentence: ");
-//
-//        String sentence = keyboard.nextLine();
-//
-//        System.out.println("Your sentence is: " + sentence);
-//        System.out.println("Find word: ");
-//
-//        String wordToFind = keyboard.next();
-//
-//        String [] words = sentence.split(" ");
-//
-//        List<String> wordList = new ArrayList<>(List.of(words));
-//        if (wordList.contains(wordToFind)) {
-//            System.out.println("Found it!");
-//        } else {
-//            System.out.println("404 word not found");
-//        }
-
-
-
+        System.out.println(wordFrequencyAnalyzerClass.calculateHighestFrequency(inputText));
+        System.out.println("\nWord to find: ");
+        String wordToFind = keyboard.next();
+        System.out.println(wordFrequencyAnalyzerClass.calculateHighestFrequencyForWord(inputText, wordToFind));
     }
 }
