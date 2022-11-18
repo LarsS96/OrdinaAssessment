@@ -34,6 +34,9 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
                 max = count;
             }
         }
+        if (max < 1) {
+            max = 1;
+        }
         return max;
     }
 
