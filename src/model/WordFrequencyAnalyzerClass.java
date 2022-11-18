@@ -3,9 +3,9 @@ package model;
 import interfaces.WordFrequency;
 import interfaces.WordFrequencyAnalyzer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * @author Lars van der Schoor <larsvanderschoor@hotmail.com>
@@ -14,21 +14,18 @@ import java.util.Scanner;
  */
 public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
 
-    @Override
     public int calculateHighestFrequency(String inputText) {
-        String [] words = inputText.split(" ");
-
+        String[] words = inputText.toLowerCase().split(" ");
         Arrays.sort(words);
-        System.out.println(Arrays.toString(words));
         int max = 0;
         int count = 1;
-        String currentWord = words [0];
+        String currentWord = words[0];
         for (int i = 1; i < words.length; i++) {
-            if (words[i].equalsIgnoreCase(currentWord)){
+            if (words[i].equalsIgnoreCase(currentWord)) {
                 count++;
             } else {
                 count = 1;
-                currentWord = words [i];
+                currentWord = words[i];
             }
             if (max < count) {
                 max = count;
@@ -40,9 +37,8 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
         return max;
     }
 
-    @Override
     public int calculateHighestFrequencyForWord(String inputText, String wordToFind) {
-        String [] wordList = inputText.split(" ");
+        String[] wordList = inputText.split(" ");
         int count = 0;
         for (int i = 0; i < wordList.length; i++) {
             if (wordToFind.equalsIgnoreCase(wordList[i]))
@@ -52,8 +48,9 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
         return count;
     }
 
-    @Override
+
     public List<WordFrequency> calculateMostFrequentNWords(String inputText, int n) {
-        return null;
+        List <WordFrequency> myList = new ArrayList<>();
+        return myList;
     }
 }
