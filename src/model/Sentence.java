@@ -1,10 +1,7 @@
 package model;
 import interfaces.WordFrequency;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author Lars van der Schoor <larsvanderschoor@hotmail.com>
@@ -22,16 +19,18 @@ public class Sentence implements WordFrequency {
         List<String> wordList = new ArrayList<>(List.of(words));
         System.out.println("Word to find: ");
         wordToGet = keyboard.next();
-        if (wordList.contains(wordToGet)) {
-            return wordToGet;
+        if (wordList.contains(wordToGet)) { // IgnoreCase ?
+            return String.format("Word '%s' is found in the text\n",
+                    wordToGet);
         } else {
-            return "not found";
+            return "\nnot found";
         }
     }
 
     public int getFrequency(){
-        System.out.println("Fill in sentence: ");
-        String wordList [] = keyboard.nextLine().split(" ");
+        System.out.println("Fill in sentence: "); // werkt nog niet goed als het achter elkaar draait
+        String inputText = keyboard.nextLine();
+        String wordList [] = inputText.split(" ");
         int count = 0;
         System.out.println("Find: ");
         String wordToCount = keyboard.next();
@@ -39,7 +38,7 @@ public class Sentence implements WordFrequency {
             if (wordToCount.equalsIgnoreCase(wordList[i]))
                 count++;
         }
-        System.out.println("Amount of " + wordToCount + ": " + count);
+        System.out.printf("Amount of '%s': ", wordToCount);
         return count;
     }
 }

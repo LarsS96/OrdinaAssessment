@@ -19,7 +19,9 @@ public class WordCounter {
         System.out.println("Welcome to this text processing tool. Within this tool you can look in texts for " +
                 "words and the frequency of words\n");
 
-        System.out.println(input.getWord());
+
+
+        // System.out.println(input.getWord());
         System.out.println(input.getFrequency());
 
 
