@@ -58,7 +58,7 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
             sentence.wordToGet = words[index];
             myList.add(sentence);
         }
-        return myList.stream().toList();
+        return myList;
     }
 }
 

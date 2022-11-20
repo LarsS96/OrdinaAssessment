@@ -1,17 +1,13 @@
 package Controller;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-import model.*;
+
 import model.WordFrequencyAnalyzerClass;
 /**
  * @author Lars van der Schoor <la.van.der.schoor@st.hanze.nl>
  * <p>
  * [omschrijving van code]
  */
-public class WordCounter {
-    Scanner keyboard = new Scanner(System.in);
+public class WordCounterLauncher {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
@@ -32,6 +28,6 @@ public class WordCounter {
         System.out.println("\nWord to find: ");
         String wordToFind = keyboard.next();
         System.out.println(wordFrequencyAnalyzerClass.calculateHighestFrequencyForWord(inputText, wordToFind));
-        //System.out.println(wordFrequencyAnalyzerClass.calculateMostFrequentNWords(inputText, 2));
+        // System.out.println(wordFrequencyAnalyzerClass.calculateMostFrequentNWords(inputText, int n));
     }
 }
