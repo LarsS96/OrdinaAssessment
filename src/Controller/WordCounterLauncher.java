@@ -1,11 +1,15 @@
 package Controller;
 import java.util.Scanner;
 
+import model.WordCount;
 import model.WordFrequencyAnalyzerClass;
+
+import javax.swing.text.StringContent;
+
 /**
- * @author Lars van der Schoor <la.van.der.schoor@st.hanze.nl>
+ * @author Lars van der Schoor <larsvanderschoor@hotmail.com>
  * <p>
- * [omschrijving van code]
+ * Case assessment Ordina November '22 - WordCounterLauncher class
  */
 public class WordCounterLauncher {
     public static void main(String[] args) {
@@ -27,7 +31,15 @@ public class WordCounterLauncher {
 
         System.out.println("\nWord to find: ");
         String wordToFind = keyboard.next();
+
+
         System.out.println(wordFrequencyAnalyzerClass.calculateHighestFrequencyForWord(inputText, wordToFind));
-        // System.out.println(wordFrequencyAnalyzerClass.calculateMostFrequentNWords(inputText, int n));
+
+//        WordCount wordCount = new WordCount();
+//
+//        String s1 = wordCount.getWord();
+//        String s2 = String.valueOf(wordCount.getFrequency());
+//        String superString = s1.concat(s2);
+//        System.out.println(wordFrequencyAnalyzerClass.calculateMostFrequentNWords(superString, 3));
     }
 }

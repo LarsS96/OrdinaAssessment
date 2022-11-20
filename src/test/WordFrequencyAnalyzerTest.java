@@ -3,9 +3,9 @@ import model.WordFrequencyAnalyzerClass;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
- * @author Lars van der Schoor <la.van.der.schoor@st.hanze.nl>
+ * @author Lars van der Schoor <larsvanderschoor@hotmail.com>
  * <p>
- * [omschrijving van code]
+ * Case assessment Ordina November '22 - Testclass for methods in the WordFrequencyAnalyzerClass
  */
 public class WordFrequencyAnalyzerTest {
     WordFrequencyAnalyzerClass wordFrequencyAnalyzerClass = new WordFrequencyAnalyzerClass();

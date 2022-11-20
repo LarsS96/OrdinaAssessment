@@ -49,14 +49,14 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
     }
 
 
-    public List<WordFrequency> calculateMostFrequentNWords(String inputText, int n) {
+    public List<WordFrequency> calculateMostFrequentNWords(String inputText, int n) { // not completed
         List <WordFrequency> myList = new ArrayList<>();
         String[] words = inputText.toLowerCase().split(" ");
-        Sentence sentence = new Sentence();
+        WordCount wordCount = new WordCount();
         for (int index = 0; index < words.length; index++) {
-            sentence.inputText = inputText;
-            sentence.wordToGet = words[index];
-            myList.add(sentence);
+            wordCount.inputText = inputText;
+            wordCount.wordToGet = words[index];
+            myList.add(wordCount);
         }
         return myList;
     }
