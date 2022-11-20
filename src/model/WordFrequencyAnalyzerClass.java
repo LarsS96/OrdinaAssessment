@@ -17,24 +17,24 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
     public int calculateHighestFrequency(String inputText) {
         String[] words = inputText.toLowerCase().split(" ");
         Arrays.sort(words);
-        int max = 0;
-        int count = 1;
+        int highest = 0;
+        int amount = 1;
         String currentWord = words[0];
         for (int i = 1; i < words.length; i++) {
             if (words[i].equalsIgnoreCase(currentWord)) {
-                count++;
+                amount++;
             } else {
-                count = 1;
+                amount = 1;
                 currentWord = words[i];
             }
-            if (max < count) {
-                max = count;
+            if (highest < amount) {
+                highest = amount;
             }
         }
-        if (max < 1) {
-            max = 1;
+        if (highest < 1) {
+            highest = 1;
         }
-        return max;
+        return highest;
     }
 
     public int calculateHighestFrequencyForWord(String inputText, String wordToFind) {
@@ -51,6 +51,14 @@ public class WordFrequencyAnalyzerClass implements WordFrequencyAnalyzer {
 
     public List<WordFrequency> calculateMostFrequentNWords(String inputText, int n) {
         List <WordFrequency> myList = new ArrayList<>();
-        return myList;
+        String[] words = inputText.toLowerCase().split(" ");
+        Sentence sentence = new Sentence();
+        for (int index = 0; index < words.length; index++) {
+            sentence.inputText = inputText;
+            sentence.wordToGet = words[index];
+            myList.add(sentence);
+        }
+        return myList.stream().toList();
     }
 }
+
